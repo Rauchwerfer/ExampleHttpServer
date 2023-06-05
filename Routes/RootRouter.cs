@@ -3,14 +3,14 @@ using Newtonsoft.Json.Linq;
 using System.Net;
 using System.Text;
 
-namespace ExampleHttpServer
+namespace ExampleHttpServer.Routes
 {
     public class RootRouter : Router
     {
         public RootRouter(string absolutePath, ILogger logger) : base(absolutePath, logger)
         {
             _endPoints.Add(
-                new RouteEndPoint(absolutePath + "/", GET, async (HttpListenerContext ctx) =>
+                new RouteEndPoint(absolutePath + "/", GET, async (ctx) =>
                 {
                     HttpListenerRequest req = ctx.Request;
                     HttpListenerResponse res = ctx.Response;
@@ -33,7 +33,7 @@ namespace ExampleHttpServer
                 })
             );
             _endPoints.Add(
-                new RouteEndPoint(absolutePath + "/time", GET, async (HttpListenerContext ctx) =>
+                new RouteEndPoint(absolutePath + "/time", GET, async (ctx) =>
                 {
                     HttpListenerRequest req = ctx.Request;
                     HttpListenerResponse res = ctx.Response;
@@ -56,5 +56,5 @@ namespace ExampleHttpServer
                 })
             );
         }
-    }    
+    }
 }

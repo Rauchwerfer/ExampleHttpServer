@@ -1,4 +1,5 @@
 ﻿using System.Net;
+using ExampleHttpServer.Routes;
 
 namespace ExampleHttpServer
 {
@@ -58,7 +59,7 @@ namespace ExampleHttpServer
                 }
                 
                 _logger.Log($"Starting server on {url}...");
-                _listener.Prefixes.Add(url);                
+                _listener.Prefixes.Add(url); 
                 _listener.Start();
 
                 _runServer = true;
@@ -116,7 +117,7 @@ namespace ExampleHttpServer
 
                     return;
                 }
-
+                
                 endPoint.AcceptRequest(ctx);
             }
             catch (Exception ex)
