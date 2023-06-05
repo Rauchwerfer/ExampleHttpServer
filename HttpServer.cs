@@ -57,8 +57,8 @@ namespace ExampleHttpServer
                     return;
                 }
                 
-                _logger.Log("Starting...");
-                _listener.Prefixes.Add(url);
+                _logger.Log($"Starting server on {url}...");
+                _listener.Prefixes.Add(url);                
                 _listener.Start();
 
                 _runServer = true;

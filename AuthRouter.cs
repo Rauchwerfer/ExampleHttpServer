@@ -19,8 +19,8 @@ namespace ExampleHttpServer
                     byte[] requestBodyBytes = new byte[req.ContentLength64];
                     await req.InputStream.ReadAsync(requestBodyBytes);
 
-                    _logger.Log(req.ContentType);
-                    _logger.Log(Encoding.UTF8.GetString(requestBodyBytes));
+                    //_logger.Log(req.ContentType);
+                    //_logger.Log(Encoding.UTF8.GetString(requestBodyBytes));
 
                     JObject responseBody = new JObject()
                     {
