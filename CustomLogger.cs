@@ -17,9 +17,9 @@
 
         public void LogException(Exception ex)
         {
-            Log($"{HolderName} :: ERROR :: MESSAGE: {ex.Message}");
-            Log($"{HolderName} :: ERROR :: SOURCE: {ex.Source}");
-            Log($"{HolderName} :: ERROR :: STACKTRACE: {ex.StackTrace}");
+            Log($"ERROR :: MESSAGE: {ex.Message}");
+            Log($"ERROR :: SOURCE: {ex.Source}");
+            Log($"ERROR :: STACKTRACE: {ex.StackTrace}");
         }
     }
 }
